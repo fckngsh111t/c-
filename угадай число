@@ -1,0 +1,38 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Random random = new Random();
+        int randomNumber = random.Next(0, 101);
+        
+        Console.WriteLine("Добро пожаловать в игру 'Угадай число' ");
+        Console.WriteLine("Загаданное число от 0 до 100. Попробуй угадать.");
+
+        int guess;
+        bool isGuessed = false;
+
+        while (!isGuessed)
+        {
+            Console.Write("Введи свое число: ");
+            guess = Convert.ToInt32(Console.ReadLine());
+
+            if (guess == randomNumber)
+            {
+                Console.WriteLine(" Ты угадал число.");
+                isGuessed = true;
+            }
+            else if (guess < randomNumber)
+            {
+                Console.WriteLine("Загаданное число больше.");
+            }
+            else
+            {
+                Console.WriteLine("Загаданное число меньше.");
+            }
+        }
+
+        Console.WriteLine("Отличная игра.");
+    }
+}
